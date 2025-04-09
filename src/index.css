@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  @page {
+    margin: 1cm;
+  }
+  
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+}
+
+/* Custom styles for bracket connections */
+.bracket-connection {
+  position: absolute;
+  background: #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.bracket-connection:hover {
+  background: #93c5fd;
+}
+
+/* Smooth scrolling for bracket container */
+#bracket-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #bracket-container {
+    gap: 16px;
+    padding: 4px;
+  }
+}
+
+/* Page break styles */
+.page-break {
+  page-break-after: always;
+  break-after: page;
+}
+
+/* Print optimization */
+@media print {
+  .bracket-connection {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  #bracket-container {
+    transform-origin: top left;
+    zoom: 0.75;
+  }
+}
